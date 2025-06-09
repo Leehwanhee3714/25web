@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>요쿨살론 - 아이슬란드</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ddeff2;
+      color: #222;
+    }
+
+    header {
+      background-color: #333c50;
+      color: white;
+      text-align: center;
+      padding: 2em 1em;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .banner {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #4488aa;
+      color: white;
+      padding: 1em 2em;
+      border-radius: 10px 0 0 10px;
+      font-weight: bold;
+      z-index: 100;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin: 1em;
+      padding: 10px 20px;
+      background-color: #ffffffcc;
+      color: black;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-button:hover {
+      background-color: #ffd54f;
+    }
+
+    .slider-container {
+      position: relative;
+      max-width: 900px;
+      margin: 2em auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      padding: 2em;
+    }
+
+    .slider-title {
+      margin-bottom: 1em;
+      text-align: center;
+    }
+
+    .slide {
+      display: none;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2em;
+    }
+
+    .slide.active {
+      display: flex;
+    }
+
+    .text {
+      flex: 1 1 45%;
+      text-align: left;
+    }
+
+    .text h3 {
+      color: #3366cc;
+    }
+
+    .image {
+      flex: 1 1 45%;
+    }
+
+    .image img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .nav-buttons-fixed {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      margin-top: 1.5em;
+    }
+
+    .nav-buttons-fixed button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background-color: #ffffffcc;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .nav-buttons-fixed button:hover {
+      background-color: #ffd54f;
+    }
+
+    footer {
+      padding: 1.5em;
+      background-color: rgba(0, 0, 0, 0.4);
+      text-align: center;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner">요쿨살론을 보고 있습니다</div>
+
+  <a href="iceland.html" class="back-button">⬅️ 아이슬란드 도시 목록으로</a>
+
+  <header>
+    <h1>❄️ 요쿨살론</h1>
+    <p>얼음 호수와 빙하가 어우러진 아이슬란드의 보석</p>
+  </header>
+
+  <!-- 관광지 슬라이더 -->
+  <section class="slider-container">
+    <h2 class="slider-title">📍 주요 관광지</h2>
+    <div id="place-slider">
+      <div class="slide active">
+        <div class="text">
+          <h3>요쿨살론 빙하 호수</h3>
+          <p>빙하 조각들이 떠다니는 장관의 풍경을 자랑하는 얼음 호수</p>
+        </div>
+        <div class="image">
+           <img src="images/yokusalon bingha hosu.jpg"요쿨살론 빙하 호수">
+        </div>
+      </div>
+      <div class="slide">
+        <div class="text">
+          <h3>다이아몬드 해변</h3>
+          <p>검은 모래 해변 위로 빙하가 반짝이는 환상적인 장소</p>
+        </div>
+        <div class="image">
+           <img src="images/diamond beach.webp" alt="다이아몬드 해변">
+        </div>
+      </div>
+    </div>
+    <div class="nav-buttons-fixed">
+      <button onclick="moveSlide(-1, 'place-slider')">⬅ 이전</button>
+      <button onclick="moveSlide(1, 'place-slider')">다음 ➡</button>
+    </div>
+  </section>
+
+  <!-- 음식 슬라이더 -->
+  <section class="slider-container">
+    <h2 class="slider-title">🍽️ 요쿨살론에서 맛보고 싶은 음식</h2>
+    <div id="food-slider">
+      <div class="slide active">
+        <div class="text">
+          <h3>양고기 스튜 (Kjötsúpa)</h3>
+          <p>차가운 날씨에 어울리는 따뜻한 양고기 국물 요리</p>
+          <p><strong>예상 경비:</strong> 약 4,000~6,000 ISK</p>
+        </div>
+        <div class="image">
+           <img src="images/stew.jpg" alt="양고기 스튜"> 
+        </div>
+      </div>
+      <div class="slide">
+        <div class="text">
+          <h3>플뢰쿠리</h3>
+          <p>아이슬란드식 팬케이크로, 과일잼이나 크림과 함께 제공</p>
+          <p><strong>예상 경비:</strong> 약 2,500 ISK</p>
+        </div>
+        <div class="image">
+           <img src="images/iceland fanckae.jpg" alt="플뢰쿠리">-       </div>
+      </div>
+    </div>
+    <div class="nav-buttons-fixed">
+      <button onclick="moveSlide(-1, 'food-slider')">⬅ 이전</button>
+      <button onclick="moveSlide(1, 'food-slider')">다음 ➡</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 환희의 여행 리스트</p>
+  </footer>
+
+  <script>
+    function moveSlide(direction, sliderId) {
+      const container = document.getElementById(sliderId);
+      const slides = container.querySelectorAll('.slide');
+      let currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+      slides[currentIndex].classList.remove('active');
+      let nextIndex = (currentIndex + direction + slides.length) % slides.length;
+      slides[nextIndex].classList.add('active');
+    }
+  </script>
+</body>
+</html>

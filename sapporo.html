@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>삿포로 여행 정보</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e8f0f8;
+      color: #333;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      text-align: center;
+      padding: 2em 1em;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin: 1em;
+      padding: 10px 20px;
+      background-color: #ffffffcc;
+      color: black;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-button:hover {
+      background-color: #ffd54f;
+    }
+
+    .slider-container {
+      position: relative;
+      max-width: 900px;
+      margin: 2em auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      padding: 2em;
+    }
+
+    .slider-title {
+      margin-bottom: 1em;
+      text-align: center;
+    }
+
+    .slide {
+      display: none;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2em;
+    }
+
+    .slide.active {
+      display: flex;
+    }
+
+    .slide .text {
+      flex: 1 1 45%;
+      text-align: left;
+    }
+
+    .slide .text h3 {
+      color: #3366cc;
+      margin-bottom: 0.5em;
+    }
+
+    .slide .text p {
+      margin-bottom: 1em;
+    }
+
+    .slide .image {
+      flex: 1 1 45%;
+    }
+
+    .slide .image img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .nav-buttons-fixed {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      margin-top: 1.5em;
+      flex-wrap: nowrap;
+    }
+
+    .nav-buttons-fixed button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background-color: #ffffffcc;
+      cursor: pointer;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .nav-buttons-fixed button:hover {
+      background-color: #ffd54f;
+    }
+
+    .banner {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #3366cc;
+      color: white;
+      padding: 1em 2em;
+      border-radius: 10px 0 0 10px;
+      font-weight: bold;
+      z-index: 100;
+    }
+
+    footer {
+      padding: 1.5em;
+      background-color: rgba(0, 0, 0, 0.4);
+      font-size: 0.9em;
+      text-align: center;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">삿포로를 보고 있습니다</div>
+
+  <a href="japan.html" class="back-button">⬅️ 일본 도시 목록으로</a>
+
+  <header>
+    <h1>❄️ 삿포로 여행</h1>
+    <p>눈과 맥주, 신사까지 어우러진 도시</p>
+  </header>
+
+  <!-- 관광지 슬라이더 -->
+  <section class="slider-container">
+    <h2 class="slider-title">📍 주요 관광지</h2>
+    <div id="place-slider">
+      <div class="slide active">
+        <div class="text">
+          <h3>삿포로 눈축제</h3>
+          <p>전 세계에서 사랑받는 겨울축제로, 거대한 눈 조각들과 조명이 아름답다</p>
+        </div>
+        <div class="image">
+          <img src="images/sapporo snow.jpg" alt="삿포로 눈축제">
+        </div>
+      </div>
+      <div class="slide">
+        <div class="text">
+          <h3>삿포로 맥주 박물관</h3>
+          <p>일본 대표 맥주의 역사와 시음을 함께 할 수 있는 장소</p>
+        </div>
+        <div class="image">
+          <img src="images/sapporo bear.jpg" alt="삿포로 맥주 박물관">
+        </div>
+      </div>
+      <div class="slide">
+        <div class="text">
+          <h3>홋카이도 신궁</h3>
+          <p>도심 속에서 자연을 느낄 수 있는 아름다운 신사</p>
+        </div>
+        <div class="image">
+          <img src="images/singoung.webp" alt="홋카이도 신궁">
+        </div>
+      </div>
+    </div>
+    <div class="nav-buttons-fixed">
+      <button onclick="moveSlide(-1, 'place-slider')">⬅ 이전</button>
+      <button onclick="moveSlide(1, 'place-slider')">다음 ➡</button>
+    </div>
+  </section>
+
+  <!-- 음식 슬라이더 -->
+  <section class="slider-container">
+    <h2 class="slider-title">🍽️ 삿포로에서 먹고 싶은 음식</h2>
+    <div id="food-slider">
+      <div class="slide active">
+        <div class="text">
+          <h3>삿포로 미소 라멘</h3>
+          <p>진하고 구수한 국물 맛의 대표적인 홋카이도식 라멘</p>
+        </div>
+        <div class="image">
+          <img src="images/sapporo ramen.jpeg" alt="삿포로 미소 라멘">
+        </div>
+      </div>
+      <div class="slide">
+        <div class="text">
+          <h3>홋카이도 게 요리</h3>
+          <p>싱싱한 털게와 대게로 즐기는 고급 요리</p>
+        </div>
+        <div class="image">
+          <img src="images/ge dish.webp" alt="게 요리">
+        </div>
+      </div>
+    </div>
+    <div class="nav-buttons-fixed">
+      <button onclick="moveSlide(-1, 'food-slider')">⬅ 이전</button>
+      <button onclick="moveSlide(1, 'food-slider')">다음 ➡</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 환희의 여행 리스트</p>
+  </footer>
+
+  <script>
+    function moveSlide(direction, sliderId) {
+      const container = document.getElementById(sliderId);
+      const slides = container.querySelectorAll('.slide');
+      let currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+      slides[currentIndex].classList.remove('active');
+      let nextIndex = (currentIndex + direction + slides.length) % slides.length;
+      slides[nextIndex].classList.add('active');
+    }
+  </script>
+</body>
+</html>

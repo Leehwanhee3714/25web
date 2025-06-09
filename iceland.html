@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>아이슬란드 여행지 선택</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e6f2f9;
+      color: #00334d;
+      text-align: center;
+    }
+
+    header {
+      background-color: #005577;
+      color: white;
+      padding: 2em 1em;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .intro {
+      margin: 2em auto;
+    }
+
+    .intro p {
+      font-size: 1.2em;
+    }
+
+    .place-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      flex-wrap: wrap;
+      margin-top: 2em;
+    }
+
+    .place-buttons a {
+      display: inline-block;
+      padding: 2em 3em;
+      background-color: #ffffffcc;
+      color: #00334d;
+      text-decoration: none;
+      font-size: 1.5em;
+      font-weight: bold;
+      border-radius: 12px;
+      transition: background-color 0.3s;
+      border: 2px solid #005577;
+    }
+
+    .place-buttons a:hover {
+      background-color: #b3e0ff;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin: 2em auto 1em;
+      padding: 10px 20px;
+      background-color: #ffffffcc;
+      color: #00334d;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid #005577;
+    }
+
+    .back-button:hover {
+      background-color: #b3e0ff;
+    }
+
+    .fixed-banner {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #005577;
+      color: white;
+      padding: 0.5em 1em;
+      font-weight: bold;
+      border-bottom-left-radius: 10px;
+    }
+
+    .aurora-note {
+      font-size: 1em;
+      margin-top: 1em;
+      color: #004466;
+    }
+
+    footer {
+      margin-top: 3em;
+      padding: 1em;
+      background-color: #005577;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="fixed-banner">아이슬란드를 보고 있습니다</div>
+  <a href="overseas.html" class="back-button">⬅️ 돌아가기</a>
+
+  <header>
+    <h1>🇮🇸 아이슬란드 여행지 선택</h1>
+  </header>
+
+  <section class="intro">
+    <p>대자연의 경이로움을 품은 아이슬란드, 어디로 떠나볼까요?</p>
+    <div class="place-buttons">
+      <a href="geysir.html">게이시르</a>
+      <a href="jokulsarlon.html">요쿨살론</a>
+      <a href="aurora.html" style="background-color: #ffeb3b; color: #000;">
+        🌌 오로라 감상<br><small style="font-size: 0.7em;">(슬라이드 쇼 & 영화관 모드)</small>
+      </a>
+    </div>
+    <p class="aurora-note">🎬 오로라는 영화관처럼 감상할 수 있는 페이지로 구성되어 있습니다!</p>
+  </section>
+
+  <footer>
+    <p>© 2025 환희의 여행 리스트</p>
+  </footer>
+</body>
+</html>

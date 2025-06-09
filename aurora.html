@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>아이슬란드 오로라 갤러리</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .banner {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 0.5em 1em;
+      color: #90e0ef;
+      font-weight: bold;
+      border-bottom-left-radius: 10px;
+      font-size: 1em;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 1em;
+      left: 1em;
+      background-color: #222;
+      color: #90e0ef;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 1px solid #90e0ef;
+    }
+
+    .gallery {
+      width: 80%;
+      max-width: 1000px;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #90e0ef;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .gallery img.active {
+      opacity: 1;
+    }
+
+    .description {
+      margin-top: 1.5em;
+      font-size: 1.2em;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">오로라를 보고 있습니다</div>
+  <a href="Iceland.html" class="back-button">⬅️ 돌아가기</a>
+
+  <div class="gallery">
+    <!-- 이미지 4~5장을 아래처럼 추가하세요 -->
+    <img src="images/aurora1.jpeg" class="active" alt="오로라 1">
+    <img src="images/aurora2.jpeg" alt="오로라 2">
+    <img src="images/aurora3.png" alt="오로라 3">
+    <img src="images/aurora4.jpeg" alt="오로라 4">
+    <!-- 필요시 추가 -->
+  </div>
+
+  <div class="description">
+    매 3초마다 다른 오로라가 영화처럼 펼쳐집니다 🎥
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.gallery img');
+    let current = 0;
+
+    setInterval(() => {
+      images[current].classList.remove('active');
+      current = (current + 1) % images.length;
+      images[current].classList.add('active');
+    }, 3000);
+  </script>
+</body>
+</html>

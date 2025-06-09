@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>해외 여행지 선택</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('images/world.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f8ff;
+      text-align: center;
+      position: relative;
+    }
+
+    header, footer, .intro, .place-buttons, .back-button, .aurora-note {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1em;
+      border-radius: 10px;
+      margin: 1em auto;
+      width: fit-content;
+      max-width: 90%;
+    }
+
+    header {
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .intro p {
+      font-size: 1.2em;
+    }
+
+    .place-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      flex-wrap: wrap;
+      margin-top: 2em;
+    }
+
+    .place-buttons a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2em;
+      background-color: rgba(30, 144, 255, 0.8);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-radius: 12px;
+      border: 2px solid #f0f8ff;
+      width: 150px;
+      transition: background-color 0.3s;
+    }
+
+    .place-buttons a:hover {
+      background-color: rgba(135, 206, 250, 0.9);
+      color: #00334d;
+    }
+
+    .place-buttons img {
+      width: 40px;
+      height: auto;
+      margin-bottom: 0.5em;
+      border-radius: 5px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin: 2em auto 1em;
+      padding: 10px 20px;
+      background-color: rgba(30, 144, 255, 0.8);
+      color: #ffffff;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid #f0f8ff;
+    }
+
+    .back-button:hover {
+      background-color: rgba(135, 206, 250, 0.9);
+      color: #00334d;
+    }
+
+    .aurora-note {
+      margin-top: 1.5em;
+      font-size: 1em;
+      color: #f0f8ff;
+    }
+
+    footer {
+      margin-top: 3em;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-button">⬅️ 돌아가기</a>
+
+  <header>
+    <h1>✈️ 해외 여행지 선택</h1>
+  </header>
+
+  <section class="intro">
+    <p>환희가 꿈꾸는 세계 여행지 중 어디로 떠나볼까요?</p>
+    <div class="place-buttons">
+      <a href="Japan.html">
+        <!-- 🇯🇵 일본 국기 이미지: images/flag_japan.png -->
+        <img src="images/japanworld.svg" alt="일본 국기">
+        일본
+      </a>
+      <a href="Taiwan.html">
+        <!-- 🇹🇼 타이완 국기 이미지: images/flag_taiwan.png -->
+        <img src="images/taiwan_flag.jpg" alt="타이완 국기">
+        타이완
+      </a>
+      <a href="Iceland.html">
+        <!-- 🇮🇸 아이슬란드 국기 이미지: images/flag_iceland.png -->
+        <img src="images/Flag_of_Iceland.svg.png" alt="아이슬란드 국기">
+        아이슬란드
+      </a>
+    </div>
+    <p class="aurora-note">✨ 참고: 아이슬란드의 오로라는 영화관처럼 감상할 수 있도록 특별하게 구성되어 있어요!</p>
+  </section>
+
+  <footer>
+    <p>© 2025 환희의 여행 리스트</p>
+  </footer>
+</body>
+</html>
