@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지우펀 여행 정보</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fff8e1;
+      color: #333;
+    }
+
+    header {
+      background-color: #cc2936;
+      color: white;
+      padding: 1.5em;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .fixed-banner {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #cc2936;
+      color: white;
+      padding: 0.5em 1em;
+      font-weight: bold;
+      border-bottom-left-radius: 10px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin: 1em;
+      padding: 10px 20px;
+      background-color: #fff0cc;
+      color: black;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid #cc2936;
+    }
+
+    .back-button:hover {
+      background-color: #ffe066;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 5em auto 2em;
+      padding: 1em;
+      background-color: #ffffffcc;
+      border-radius: 12px;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide.active {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2em;
+    }
+
+    .slide img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .slide .text {
+      flex: 1;
+      text-align: left;
+    }
+
+    .buttons {
+      text-align: center;
+      margin: 1em 0;
+    }
+
+    .buttons button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 1em;
+      font-weight: bold;
+      background-color: #ffe066;
+      border: 2px solid #cc2936;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    footer {
+      margin-top: 2em;
+      padding: 1em;
+      background-color: #cc2936;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="fixed-banner">지우펀을 보고 있습니다</div>
+  <a href="Taiwan.html" class="back-button">⬅️ 돌아가기</a>
+
+  <header>
+    <h1>지우펀 Jiufen</h1>
+  </header>
+
+  <main class="content">
+    <h2>관광 명소</h2>
+    <div class="slide active" id="placeSlide">
+      <div class="text">
+        <h3>지우펀 옛거리</h3>
+        <p>과거 금광 마을이었던 지우펀은 홍등과 골목이 아름다운 거리로 유명합니다.</p>
+        
+        <p>💰 예상 경비: 약 40,000원 ~ 60,000원</p>
+      </div>
+      <img src="images/wldnvjsdPtrjfl.jpeg" alt="지우펀 옛거리">
+    </div>
+
+    <div class="slide" id="placeSlide">
+      <div class="text">
+        <h3>전통 찻집</h3>
+        <p>지우펀의 찻집은 대만식 다도를 체험하며 풍경을 감상할 수 있는 곳입니다.</p>
+        
+        <p>💰 예상 경비: 약 20,000원 ~ 30,000원</p>
+      </div>
+      <img src="images/tea house.jpg" alt="전통 찻집">
+    </div>
+
+    <div class="buttons">
+      <button onclick="changeSlide(-1, 'placeSlide')">⬅️ 이전</button>
+      <button onclick="changeSlide(1, 'placeSlide')">다음 ➡️</button>
+    </div>
+
+    <h2>지우펀 음식</h2>
+    <div class="slide active" id="foodSlide">
+      <div class="text">
+        <h3>타로볼</h3>
+        <p>쫄깃한 타로볼은 지우펀에서 꼭 먹어야 할 대표 간식입니다.</p>
+        <p>💰 예상 가격: 약 5,000원 ~ 8,000원</p>
+      </div>
+      <img src="images/taroball.jpeg" alt="타로볼">
+    </div>
+
+    <div class="slide" id="foodSlide">
+      <div class="text">
+        <h3>어묵탕</h3>
+        <p>따뜻하고 깊은 맛의 어묵탕은 여행 중 몸을 녹여주는 음식입니다.</p>
+        <p>💰 예상 가격: 약 6,000원 ~ 10,000원</p>
+      </div>
+      <img src="images/djanrxkd.jpg" alt="어묵탕">
+    </div>
+
+    <div class="buttons">
+      <button onclick="changeSlide(-1, 'foodSlide')">⬅️ 이전</button>
+      <button onclick="changeSlide(1, 'foodSlide')">다음 ➡️</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 환희의 여행 리스트</p>
+  </footer>
+
+  <script>
+    function changeSlide(n, idPrefix) {
+      const slides = document.querySelectorAll(`.slide#${idPrefix}`);
+      let currentIndex = -1;
+
+      slides.forEach((slide, i) => {
+        if (slide.classList.contains('active')) {
+          currentIndex = i;
+          slide.classList.remove('active');
+        }
+      });
+
+      let newIndex = (currentIndex + n + slides.length) % slides.length;
+      slides[newIndex].classList.add('active');
+    }
+  </script>
+</body>
+</html>

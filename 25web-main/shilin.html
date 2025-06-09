@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스린 야시장 여행 정보</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fffbe1;
+      color: #333;
+    }
+
+    header {
+      background-color: #cc2936;
+      color: white;
+      padding: 1.5em;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .fixed-banner {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #cc2936;
+      color: white;
+      padding: 0.5em 1em;
+      font-weight: bold;
+      border-bottom-left-radius: 10px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin: 1em;
+      padding: 10px 20px;
+      background-color: #fff0cc;
+      color: black;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid #cc2936;
+    }
+
+    .back-button:hover {
+      background-color: #ffe066;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 5em auto 2em;
+      padding: 1em;
+      background-color: #ffffffcc;
+      border-radius: 12px;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide.active {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2em;
+    }
+
+    .slide img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .slide .text {
+      flex: 1;
+      text-align: left;
+    }
+
+    .buttons {
+      text-align: center;
+      margin: 1em 0;
+    }
+
+    .buttons button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 1em;
+      font-weight: bold;
+      background-color: #ffe066;
+      border: 2px solid #cc2936;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    footer {
+      margin-top: 2em;
+      padding: 1em;
+      background-color: #cc2936;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="fixed-banner">스린 야시장을 보고 있습니다</div>
+  <a href="Taiwan.html" class="back-button">⬅️ 돌아가기</a>
+
+  <header>
+    <h1>스린 야시장 Shilin Night Market</h1>
+  </header>
+
+  <main class="content">
+    <h2>관광 명소</h2>
+    <div class="slide active" id="placeSlide">
+      <div class="text">
+        <h3>야시장 메인 거리</h3>
+        <p>현지인과 관광객이 모이는 핫플레이스, 다양한 먹거리와 상점이 가득해요.</p>
+        <p>💰 예상 경비: 약 10,000원 ~ 20,000원</p>
+      </div>
+      <img src="images/shirin yasijang.jpeg" alt="야시장 메인 거리">
+    </div>
+
+    <div class="slide" id="placeSlide">
+      <div class="text">
+        <h3>게임 거리</h3>
+        <p>다트, 농구, 물고기 잡기 등 재미있는 게임 부스들이 즐비해요.</p>
+        
+        <p>💰 예상 경비: 약 5,000원 ~ 10,000원</p>
+      </div>
+       <img src="images/gameroad.jpg" alt="게임 거리">
+    </div>
+
+    <div class="buttons">
+      <button onclick="changeSlide(-1, 'placeSlide')">⬅️ 이전</button>
+      <button onclick="changeSlide(1, 'placeSlide')">다음 ➡️</button>
+    </div>
+
+    <h2>스린 야시장 음식</h2>
+    <div class="slide active" id="foodSlide">
+      <div class="text">
+        <h3>치즈 감자</h3>
+        <p>두껍고 바삭한 감자 위에 녹인 치즈와 토핑이 얹어진 인기 간식.</p>
+        <p>💰 예상 가격: 약 6,000원</p>
+      </div>
+       <img src="images/potato cheeze.jpeg" alt="치즈 감자">
+    </div>
+
+    <div class="slide" id="foodSlide">
+      <div class="text">
+        <h3>대왕 치킨 스테이크</h3>
+        <p>손보다 더 큰 튀김 닭가슴살 스테이크, 바삭하고 육즙 가득!</p>
+        <p>💰 예상 가격: 약 7,000원</p>
+      </div>
+      <img src="images/chicken steak.jpeg" alt="치킨 스테이크">
+    </div>
+
+    <div class="buttons">
+      <button onclick="changeSlide(-1, 'foodSlide')">⬅️ 이전</button>
+      <button onclick="changeSlide(1, 'foodSlide')">다음 ➡️</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 환희의 여행 리스트</p>
+  </footer>
+
+  <script>
+    function changeSlide(n, idPrefix) {
+      const slides = document.querySelectorAll(`.slide#${idPrefix}`);
+      let currentIndex = -1;
+
+      slides.forEach((slide, i) => {
+        if (slide.classList.contains('active')) {
+          currentIndex = i;
+          slide.classList.remove('active');
+        }
+      });
+
+      let newIndex = (currentIndex + n + slides.length) % slides.length;
+      slides[newIndex].classList.add('active');
+    }
+  </script>
+</body>
+</html>

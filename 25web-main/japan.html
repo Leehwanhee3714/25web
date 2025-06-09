@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>일본 여행지 선택</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('images/japanbackground.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background-color: #3366cc;
+      color: white;
+      padding: 2em 1em;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .intro {
+      margin: 2em auto;
+    }
+
+    .intro p {
+      font-size: 1.2em;
+    }
+
+    .city-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      flex-wrap: wrap;
+      margin-top: 2em;
+    }
+
+    .city-buttons a {
+      display: inline-block;
+      padding: 2em 3em;
+      background-color: #ffffffcc;
+      color: #000;
+      text-decoration: none;
+      font-size: 1.5em;
+      font-weight: bold;
+      border-radius: 12px;
+      transition: background-color 0.3s;
+      border: 2px solid #3366cc;
+    }
+
+    .city-buttons a:hover {
+      background-color: #ffd54f;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin: 2em auto 1em;
+      padding: 10px 20px;
+      background-color: #ffffffcc;
+      color: black;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid #3366cc;
+    }
+
+    .back-button:hover {
+      background-color: #ffd54f;
+    }
+
+    footer {
+      margin-top: 3em;
+      padding: 1em;
+      background-color: #3366cc;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <a href="overseas.html" class="back-button">⬅️ 돌아가기</a>
+
+  <header>
+    <h1>🇯🇵 일본 여행지 선택</h1>
+  </header>
+
+  <section class="intro">
+    <p>가고 싶은 일본 도시를 선택하세요!</p>
+    <div class="city-buttons">
+      <a href="tokyo.html">도쿄</a>
+      <a href="osaka.html">오사카</a>
+      <a href="sapporo.html">삿포로</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 환희의 여행 리스트</p>
+  </footer>
+</body>
+</html>
